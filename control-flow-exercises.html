@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Flow</title>
+</head>
+
+<body>
+    <script>
+        console.log('---------- UPPGIFT 1 ----------');
+
+        function highestNumber(a, b) {
+            return (a > b) ? a + " is the highest number" : b + " is the highest number";
+        }
+
+        console.log(highestNumber(9, 10));
+
+        console.log('---------- UPPGIFT 2 ----------');
+
+        function isLandscape(width, height) {
+            return (width > height);
+
+        }
+
+        console.log(isLandscape(100, 50));
+
+        console.log('---------- UPPGIFT 3 ----------');
+
+        function fizzBuzz(input) {
+            if (typeof input !== 'number')
+                return NaN;
+            else {
+                if ((input % 3 === 0) && (input % 5 === 0))
+                    return 'FizzBuzz';
+                else if (input % 3 === 0)
+                    return 'Fizz';
+                else if (input % 5 === 0)
+                    return 'Buzz';
+                else
+                    return input;
+            }
+        }
+
+        console.log(fizzBuzz(3));
+
+        console.log('---------- UPPGIFT 4 ----------');
+
+        function checkSpeed(speed) {
+            const speedLimit = 70;
+            const kmPerPoint = 5;
+
+            if (speed < speedLimit + kmPerPoint)
+                console.log('Ok');
+            else {
+                const points = Math.floor((speed - speedLimit) / kmPerPoint);
+
+                if (points >= 12)
+                    console.log('License Suspended');
+                else
+                    console.log('points: ' + points);
+            }
+        }
+
+        checkSpeed(75);
+
+        console.log('---------- UPPGIFT 5 ----------');
+    </script>
+
+</body>
+
+</html>

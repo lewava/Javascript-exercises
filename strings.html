@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+</head>
+
+<body>
+    <script>
+        console.log("---------- UPPGIFT 1 ----------");
+
+        let str = "Hello World";
+        let char = "o";
+
+        function containsChar(str, char) {
+            let condition = false;
+
+            for (let i = 0; i <= str.length; i++) {
+                if (str[i] === char)
+                    condition = true;
+            }
+            console.log(condition);
+        }
+
+        containsChar(str, char)
+        containsChar(str, "x")
+
+        console.log("---------- UPPGIFT 2 ----------");
+
+        function indexOfChar(str, char) {
+            let condition = false;
+
+            for (let i = 0; i <= str.length; i++) {
+                if (str[i] === char) {
+                    console.log(i);
+                    condition = true;
+                    break;
+                }
+            }
+            if (condition === false)
+                console.log("-1");
+        }
+
+        indexOfChar(str, char);
+        indexOfChar(str, "x");
+
+        console.log("---------- UPPGIFT 3 ----------");
+
+        function reverse(str) {
+            let result = "";
+
+            for (let i = (str.length - 1); i >= 0; i--) {
+                result += str[i];
+            }
+            console.log(result);
+        }
+
+        reverse("sponge-bob");
+
+        console.log("---------- UPPGIFT 4 ----------");
+
+        function removeChar(str, char) {
+            let result = "";
+
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] !== char)
+                    result += str[i];
+            }
+            console.log(result)
+        }
+
+        removeChar(str, char);
+        removeChar(str, " ");
+
+        console.log("---------- UPPGIFT 5 ----------");
+
+        let char1 = "o";
+        let char2 = "y";
+
+        function replaceChar(str, char1, char2) {
+            let result = "";
+
+            for (let i = 0; i < str.length; i++) {
+                if (str[i] === char1)
+                    result += char2;
+                else
+                    result += str[i];
+            }
+            console.log(result);
+        }
+
+        replaceChar(str, char1, char2);
+        replaceChar(str, " ", "-");
+
+        console.log("---------- UPPGIFT 6 ----------");
+
+        let start = 1;
+        let stop = 4;
+
+        function substring(str, start, stop) {
+            let result = "";
+
+            for (let i = start; i <= stop; i++) {
+                result += str[i];
+            }
+            console.log(result);
+        }
+
+        substring(str, start, stop);
+        substring(str, 0, 3)
+
+        console.log("---------- UPPGIFT 7 ----------");
+
+        function contains(str, char) {
+
+            for (let i = 0; i < str.length; i++) {
+                let temp = str[i];
+
+                if (temp === char[0]) {
+
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>if satser</title>
+</head>
+
+<body>
+    <script>
+        console.log('---------- UPPGIFT 1 ----------');
+
+        function biggerThenTen(number) {
+            if (number > 10)
+                console.log('Talet är större en tio.');
+            else
+                console.log('Talet är mindre en tio.');
+        }
+
+        biggerThenTen(20);
+
+        console.log('---------- UPPGIFT 2 ----------');
+
+        function juice(juice) {
+            if (juice < 10)
+                console.log('Beställ 30 paket.');
+            else if (juice <= 20)
+                console.log('Beställ 20 paket.');
+            else
+                console.log('Ingen juice behövs beställas');
+        }
+
+        juice(25);
+
+        console.log('---------- UPPGIFT 3 ----------');
+
+        function age(age) {
+            if (typeof age !== 'number')
+                console.log('Du kan endast använda siffror.');
+            else {
+                if (age < 18)
+                    console.log('Ej myndig');
+                else if (age > 64)
+                    console.log('Pensionär');
+                else
+                    console.log('Myndig');
+            }
+        }
+
+        age(45);
+
+        console.log('---------- UPPGIFT 4 ----------');
+
+        function feber(temp) {
+            if (temp > 37.8 && temp < 39.5)
+                console.log('Du har feber.')
+            else if (temp > 39.5)
+                console.log('Uppsök läkare.')
+            else if (temp < 37.8)
+                console.log('Du har inte feber.')
+        }
+
+        feber(38);
+
+        console.log('---------- UPPGIFT 5 ----------');
+
+        function category(category) {
+            if (category === 'student' || category === 'pensionär')
+                console.log('20kr');
+            else if (category === 'vuxen')
+                console.log('30kr');
+            else
+                console.log('Fel Kategori.');
+        }
+
+        category('student');
+
+        console.log('---------- UPPGIFT 6 ----------');
+
+        function year(year) {
+            if (year >= 1980 && year < 1990)
+                console.log('Du är född på 80-talet.');
+            else if (year < 2000 && year >= 1990)
+                console.log('Du är född på 90-talet.');
+            else
+                console.log('Du är inte född på 1990 eller 1980-talen.');
+        }
+
+        year(1998);
+    </script>
+</body>
+
+</html>

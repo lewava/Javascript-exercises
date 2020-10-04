@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loopar</title>
+</head>
+
+<body>
+    <script>
+        console.log('---------- UPPGIFT 1 ----------');
+
+        function zeroToTen() {
+            for (let i = 0; i <= 10; i++) {
+                console.log(i);
+            }
+        }
+
+        zeroToTen();
+
+        console.log('---------- UPPGIFT 2 ----------');
+
+        function between(numberOne, numberTwo) {
+
+            let i = numberOne + 1;
+            while (i < numberTwo) {
+                console.log(i);
+                i++;
+            }
+        }
+
+        between(1, 15);
+
+        console.log('---------- UPPGIFT 3 ----------');
+
+        function lessThen(number) {
+
+            let i = number - 1;
+            while (i > 0) {
+                console.log(i);
+                i--;
+            }
+        }
+
+        lessThen(20);
+
+        console.log('---------- UPPGIFT 4 ----------');
+
+        function uddaTal() {
+
+            for (let i = 0; i <= 100; i++) {
+                if (i % 2 !== 0)
+                    console.log(i);
+            }
+        }
+
+        uddaTal();
+
+        console.log('---------- UPPGIFT 5 ----------');
+
+        function multiplication(number) {
+
+            multiNumber = 0;
+
+            for (let i = 0; i <= 10; i++) {
+                console.log(number * multiNumber);
+                multiNumber++;
+            }
+        }
+
+        multiplication(5);
+    </script>
+
+</body>
+
+</html>
