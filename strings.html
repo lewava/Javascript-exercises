@@ -25,7 +25,7 @@
         }
 
         containsChar(str, char)
-        containsChar(str, "x")
+        containsChar(str, "k")
 
         console.log("---------- UPPGIFT 2 ----------");
 
@@ -44,7 +44,7 @@
         }
 
         indexOfChar(str, char);
-        indexOfChar(str, "x");
+        indexOfChar(str, "k");
 
         console.log("---------- UPPGIFT 3 ----------");
 
@@ -114,15 +114,52 @@
         console.log("---------- UPPGIFT 7 ----------");
 
         function contains(str, char) {
+            if (str.length < char.length)
+                return contains(char, str);
 
             for (let i = 0; i < str.length; i++) {
                 let temp = str[i];
 
                 if (temp === char[0]) {
+                    for (let k = 1; k < char.length; k++) {
+                        let charTemp = char[k];
+                        temp = str[(i + k)];
 
+                        if (charTemp === temp) {
+                            continue;
+                        }
+                        return false;
+                    }
+                    return true;
                 }
             }
+            return false;
         }
+
+        let containsAnswer1 = contains(str, char);
+        let containsAnswer2 = contains(str, "omg");
+        console.log(containsAnswer1);
+        console.log(containsAnswer2);
+
+        console.log("---------- UPPGIFT 8 ----------");
+
+        char = "world";
+
+        function remove(str, char) {
+
+            let emptyString = "";
+            let result = "";
+
+            for (let i = 0; i < str.length; i++) {
+
+                let temp = str[i];
+
+                for (let i = 0; i < str.length; i++) {}
+            }
+            console.log(result);
+        }
+
+        remove(str, char);
     </script>
 
 </body>
