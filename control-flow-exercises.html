@@ -66,6 +66,120 @@
         checkSpeed(75);
 
         console.log('---------- UPPGIFT 5 ----------');
+
+        function showNumbers(limit) {
+
+            for (let key = 0; key <= limit; key++) {
+                const msg = (key % 2 === 0) ? 'EVEN' : 'ODD'
+                console.log(key, msg);
+            }
+        }
+
+        showNumbers(10);
+
+        console.log('---------- UPPGIFT 6 ----------');
+
+        function countTruthy(array) {
+
+            let counter = 0;
+            for (let key of array)
+                if (key)
+                    counter++;
+
+            console.log(counter);
+        }
+
+        const array = [NaN, null, undefined, "", 0, 1, 2, 3];
+
+        countTruthy(array);
+
+        console.log('---------- UPPGIFT 7 ----------');
+
+        const movie = {
+            Title: "Leon's Life",
+            ReleaseYear: 2018,
+            Rating: 4.5,
+            Director: 'Leon Wass'
+        }
+
+        function showProperties(obj) {
+
+            for (let key in obj)
+                if (typeof obj[key] === "string")
+                    console.log(key + ": " + obj[key]);
+        }
+
+        showProperties(movie);
+
+        console.log('---------- UPPGIFT 8 ----------');
+
+        function sum(limit) {
+
+            let sum = 0;
+            for (let i = 0; i <= limit; i++)
+                if (i % 3 === 0 || i % 5 === 0)
+                    sum += i;
+
+            console.log(sum);
+        }
+
+        sum(10);
+
+        console.log('---------- UPPGIFT 9 ----------');
+
+        function calculateGrade(array) {
+            let sum = 0;
+            for (let key of array)
+                sum += key;
+            sum = (sum / array.length);
+
+            if (sum < 60)
+                console.log('F');
+            else if (sum < 70)
+                console.log('D');
+            else if (sum < 80)
+                console.log('C');
+            else if (sum < 90)
+                console.log('B');
+            else
+                console.log('A');
+        }
+
+        const marks = [80, 80, 50];
+        calculateGrade(marks);
+
+        console.log('---------- UPPGIFT 10 ----------');
+
+        function showStars(rows) {
+
+            for (let i = 1; i <= rows; i++) {
+                let star = '';
+                for (let k = 0; k < i; k++)
+                    star += '*';
+                console.log(star);
+            }
+        }
+
+        showStars(10);
+
+        console.log('---------- UPPGIFT 11 ----------');
+
+        function showPrimes(limit) {
+            for (let number = 2; number <= limit; number++)
+                if (checkPrime(number))
+                    console.log(number);
+
+        }
+
+        function checkPrime(number) {
+            for (let factor = 2; factor < number; factor++)
+                if (number % factor === 0)
+                    return false;
+
+            return true;
+        }
+
+        showPrimes(20);
     </script>
 
 </body>
