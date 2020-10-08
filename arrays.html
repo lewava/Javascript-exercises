@@ -11,132 +11,149 @@
     <script>
         console.log('---------- UPPGIFT 1 ----------');
 
-        function arrayFromRange(min, max) {
-            const output = [];
-            for (let i = min; i <= max; i++)
-                output.push(i);
-            return output;
+        let array = [1, 7, 1, 0, 5];
+        let element = 1;
+
+        function containsElement(array, searchElement) {
+            for (let element of array)
+                return (element === searchElement) ? true : false;
         }
 
-        let numbers = arrayFromRange(1, 4);
-        console.log(numbers);
+        console.log(containsElement(array, element));
+        console.log(containsElement(array, -1));
 
         console.log('---------- UPPGIFT 2 ----------');
 
-        numbers = [1, 2, 3, 4];
+        array = [1, 7, 1, 0, 5];
+        element = 7;
 
-        function includes(array, searchElement) {
-            for (let element of array)
-                if (element === searchElement)
-                    return true;
-            return false;
+        function indexOfElement(array, searchElement) {
+            for (let i = 0; i < array.length; i++)
+                if (array[i] === searchElement)
+                    return i;
+            return -1;
         }
 
-        console.log(includes(numbers, 3));
+        console.log(indexOfElement(array, element));
+        console.log(indexOfElement(array, 6));
 
         console.log('---------- UPPGIFT 3 ----------');
 
-        numbers = [1, 2, 3, 4, 1, 1, 1];
+        array = [1, 7, 1, 0, 5];
 
-        function except(array, excluded) {
-            const outPut = [];
-            for (element of array)
-                if (!excluded.includes(element))
-                    outPut.push(element);
-            return outPut;
+        function min(array) {
+            return array.reduce((a, b) => (b < a) ? b : a);
         }
 
-        let newArray = except(numbers, [1]);
-        console.log(newArray);
+        console.log(min(array));
 
         console.log('---------- UPPGIFT 4 ----------');
 
-        numbers = [1, 2, 3, 4];
+        array = [1, 7, 1, 0, 5];
 
-        function move(array, index, offset) {
-            const position = (index + offset);
-            if (position >= array.length || position < 0) {
-                console.error('Invalid offset');
-                return;
-            }
-
-            const outPut = [...array]
-            const element = outPut.splice(index, 1)[0];
-            outPut.splice(position, 0, element);
-            return outPut;
-        }
-
-        let outPut = move(numbers, 0, 1);
-        console.log(outPut);
-
-        console.log('---------- UPPGIFT 5 ----------');
-
-        numbers = [1, 2, 3, 4, 3];
-
-        function countOccurrences(array, searchElement) {
-            /* let sum = 0;
-            for (let element of array)
-                if (element === searchElement)
-                    sum++;
-            return sum; */
-
-            return array.reduce((accumulator, currentValue) => {
-                const occurrences = (currentValue === searchElement) ? 1 : 0;
-                return accumulator + occurrences;
-            }, 0);
-        }
-
-        const count = countOccurrences(numbers, 3);
-        console.log(count);
-
-        console.log('---------- UPPGIFT 6 ----------');
-
-        numbers = [1, 2, 7, 3, 4];
-
-        function getMax(array) {
-            if (array.length === 0)
-                return undefined;
-
-            /* let maxNumber = 0;
-            for (element of array)
-                if (element > maxNumber)
-                    maxNumber = element;
-            return maxNumber;*/
-
+        function max(array) {
             return array.reduce((a, b) => (a > b) ? a : b);
         }
 
-        const max = getMax(numbers);
-        console.log(max);
+        console.log(max(array));
+
+        console.log('---------- UPPGIFT 5 ----------');
+
+        array = [1, 7, 2, 0, 5];
+
+        function sum(array) {
+            return array.reduce((a, b) => a + b);
+        }
+
+        console.log(sum(array));
+
+        console.log('---------- UPPGIFT 6 ----------');
+
+        function mean(array) {
+            const sum = array.reduce((a, b) => a + b);
+            return sum / array.length;
+        }
+
+        console.log(mean(array));
+        console.log(mean([2, 0, 2, -4, 3, 0]));
 
         console.log('---------- UPPGIFT 7 ----------');
 
-        const movies = [{
-            title: 'a',
-            year: 2018,
-            rating: 4.5
-        }, {
-            title: 'b',
-            year: 2018,
-            rating: 4.7
-        }, {
-            title: 'c',
-            year: 2018,
-            rating: 3
-        }, {
-            title: 'd',
-            year: 2017,
-            rating: 4.5
-        }, ];
+        array = [1, 7, 1, 0, 5];
 
-        const filteredMovies = movies
-            .filter(m => m.year === 2018 && m.rating >= 4)
-            .sort((a, b) => a.rating - b.rating)
-            .reverse()
-            .map(m => m.title);
+        function reverse(array) {
+            return array.reverse();
+        }
 
-        console.log(filteredMovies);
+        console.log(reverse(array));
+        console.log(reverse(["olof", "arne", "bengt"]));
+
+        console.log('---------- UPPGIFT 8 ----------');
+
+        array = [1, 7, 1, 0, 5];
+        element = 1;
+
+        function filter(array, searchElement) {
+            return array.filter(numbers => numbers === searchElement);
+        }
+
+        console.log(filter(array, element));
+        console.log(filter(array, 0));
+        console.log(filter([1, 3, 3, 7], 0));
+
+        console.log('---------- UPPGIFT 9 ----------');
+
+        function exclude(array, searchElement) {
+            let outPut = [...array];
+            for (let i = 0; i < outPut.length; i++)
+                if (outPut[i] === searchElement)
+                    outPut.splice(i, 1);
+            return outPut;
+        }
+
+        console.log(exclude(array, element));
+        console.log(exclude(array, 0));
+        console.log(exclude([1, 3, 3, 7], 0));
+
+        console.log('---------- UPPGIFT 10 ----------');
+
+        function unique(array) {
+            let outPut = [];
+            for (let i = 0; i < array.length; i++) {
+                outPut.push(array[i]);
+                for (let k = (i + 1); k < array.length; k++)
+                    if (array[i] === array[k])
+                        array.splice(k, 1);
+            }
+            return outPut;
+        }
+
+        console.log(unique(array));
+        console.log(unique([1, 3, 3, 7], 0));
+
+        console.log('---------- UPPGIFT 11 ----------');
+
+        let str = "Kalle,Olof,Gösta";
+
+        function split(str, deli) {
+            return str.split(deli);
+        }
+
+        console.log(split(str, ","));
+        console.log(split("1 6 10 9", " "));
+
+        console.log('---------- UPPGIFT 12 ----------');
+
+        let arr = ["Kalle", "Olof", "Gösta"]
+
+        function join(array, deli) {
+            return array.join(deli);
+        }
+
+        console.log(join(arr, ","));
+        console.log(join(["1", "6", "10", "9"], " "));
     </script>
+
 </body>
 
 </html>
