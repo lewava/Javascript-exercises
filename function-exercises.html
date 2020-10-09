@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+
+<body>
+    <script>
+        console.log('---------- UPPGIFT 1 ----------');
+
+        function sum(...args) {
+            if (args.length === 1 && Array.isArray(args[0]))
+                args = [...args[0]];
+            return args.reduce((a, b) => a + b);
+        }
+
+        console.log(sum([1, 2, 3, 4]));
+
+        console.log('---------- UPPGIFT 2 ----------');
+
+        const circle = {
+            radius: 2,
+            get area() {
+                return Math.PI * this.radius * this.radius;
+            }
+        }
+
+        console.log(circle.area);
+
+        console.log('---------- UPPGIFT 3 ----------');
+
+        numbers = [1, 2, 3, 4, 3];
+
+        function countOccurrences(array, searchElement) {
+            if (!Array.isArray(array))
+                throw new Error('Invalid array.');
+
+            return array.reduce((accumulator, currentValue) => {
+                const occurrences = (currentValue === searchElement) ? 1 : 0;
+                return accumulator + occurrences;
+            }, 0);
+        }
+
+        try {
+            const count = countOccurrences(true, 3);
+            console.log(count);
+        } catch (e) {
+            console.log(e.message);
+        }
+    </script>
+</body>
+
+</html>
