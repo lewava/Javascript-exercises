@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kodavstämning</title>
+</head>
+
+<body>
+    <script>
+        console.log('---------- UPPGIFT 1 ----------');
+
+        function between(n1, n2, n3) {
+            return (n1 >= n2 && n1 <= n3) ? true : false;
+        }
+
+        console.log(between(5, 1, 10));
+        console.log(between(0, 10, 100));
+        console.log(between(1, 1, 5));
+
+        console.log('---------- UPPGIFT 2 ----------');
+
+        function compress(str) {
+            let output = '';
+            let sum = 1;
+            let sortedArray = str
+                .split("")
+                .sort();
+
+            for (let i = 0; i < sortedArray.length; i++) {
+
+                for (let k = (i + 1); k < sortedArray.length; k++)
+                    if (sortedArray[i] === sortedArray[k])
+                        sum++;
+
+                sortedArray.splice(i + 1, sum - 1);
+                output += sum + sortedArray[i];
+                sum = 1;
+            }
+            return output;
+        }
+
+        console.log(compress("AAAAA"));
+        console.log(compress("AAABBB"));
+        console.log(compress("AABBAACC"));
+
+        console.log('---------- UPPGIFT 3 ----------');
+
+        function double(array) {
+            let output = [];
+            for (let element of array)
+                output.push(element * 2);
+            return output;
+        }
+
+        console.log(double([1, 2, 3]));
+        console.log(double([-10, 0, 100]));
+
+        console.log('---------- UPPGIFT 4 ----------');
+
+        let order = [{
+            "id": "8ec144e4-0b9c-4689-95a1-95e9805cdc96",
+            "name": "Comfy Sofa",
+            "amount": 1,
+            "price": 199.99
+        }, {
+            "id": "b47a4226-36af-4d5a-904a-7ef7a8325ab8",
+            "name": "Lepoard Print Curtains",
+            "amount": 2,
+            "price": 10.0
+        }, {
+            "id": "ada7292c-fb14-465e-b26e-e5575714a268",
+            "name": "Silky Smooth Carpet",
+            "amount": 1,
+            "price": 59.99
+        }, {
+            "id": "37da94a2-e59d-44a6-8a14-533554ed6038",
+            "name": "Super Soft Butt Pillow",
+            "amount": 4,
+            "price": 8.99
+        }]
+
+        function orderSum(order) {
+            return order.reduce((sum, obj) => sum + obj.price * obj.amount, 0);
+        }
+
+        console.log(orderSum(order));
+    </script>
+</body>
+
+</html>
