@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch</title>
+</head>
+
+<body>
+    <script>
+        function StopWatch() {
+            let startTime, endTime, running, duration = 0;
+
+            this.start = function() {
+                if (running)
+                    throw new Error('Stopwatch already started.')
+                running = true;
+                startTime = new Date();
+            }
+            this.stop = function() {
+                if (!running)
+                    throw new Error('Stopwatch is not running.')
+                running = false;
+                endTime = new Date();
+                const seconds = (endTime.getTime() - startTime.getTime()) / 1000;
+                console.log(duration += seconds);
+            }
+            this.reset = function() {
+                startTime = null;
+                endTime = null;
+                running = false;
+                duration = 0;
+            }
+        }
+
+        const sw = new StopWatch();
+    </script>
+
+</body>
+
+</html>
