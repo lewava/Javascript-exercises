@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback functions</title>
+</head>
+
+<body>
+    <script>
+        console.log('---------- UPPGIFT 1 ----------');
+
+        let array = ['a', 'b', 'c'];
+
+        function print(value, index, array) {
+            console.log(value);
+        }
+
+        function foreach(array, func) {
+            for (let i = 0; i < array.length; i++) {
+                const value = array[i];
+                func(value, i, array);
+            }
+        }
+
+        foreach(array, print);
+
+        console.log('---------- UPPGIFT 2 ----------');
+
+
+        function map(array, func) {
+            for (let i = 0; i < array.length; i++) {
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>
