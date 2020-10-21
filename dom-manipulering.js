@@ -27,7 +27,4 @@ buttonMinus.addEventListener('click', )
 function calculate(input) {
     let tempArray = input.split('');
 
-    for (let element of tempArray) {
-        if
-    }
 }
