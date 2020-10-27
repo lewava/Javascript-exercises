@@ -5,10 +5,8 @@ let btn = document.querySelector('button');
 let ptag = document.querySelector('p');
 
 function changeText(e) {
-
     ptag.textContent = input.value;
     input.value = '';
-
 }
 
 btn.addEventListener('click', changeText);
